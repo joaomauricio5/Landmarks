@@ -59,10 +59,10 @@
 				CFDBCD7827C8F553009CDCE0 /* LandmarksApp.swift */,
 				CF1A4D5F27C91C720079C55A /* MapView.swift */,
 				CFDBCD7A27C8F553009CDCE0 /* ContentView.swift */,
+				CF1A4D5C27C8FEE00079C55A /* CircleImage.swift */,
 				CFDBCD7C27C8F554009CDCE0 /* Assets.xcassets */,
 				CFDBCD8127C8F554009CDCE0 /* Info.plist */,
 				CFDBCD7E27C8F554009CDCE0 /* Preview Content */,
-				CF1A4D5C27C8FEE00079C55A /* CircleImage.swift */,
 			);
 			path = Landmarks;
 			sourceTree = "<group>";
