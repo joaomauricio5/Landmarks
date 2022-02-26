@@ -6,11 +6,17 @@
 //
 
 import Foundation
+import SwiftUI
 
-struct Landmark {
+struct Landmark: Hashable, Codable {
     var id: String
     var name: String
     var park: String
     var state: String
     var description: String
+}
+
+private var imageName: String
+var image: Image {
+    Image(imageName)
 }
