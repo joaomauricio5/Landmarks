@@ -2,4 +2,6 @@
 
 ### Work in progress
 
-<img width="606" alt="Screenshot 2022-02-25 at 16 40 23" src="https://user-images.githubusercontent.com/90060036/155753059-d5a05d1a-3288-49c7-a8fa-f7e9ba6bcd21.png">
+![Git of Landmarks demo](https://user-images.githubusercontent.com/90060036/156419068-8d2ea6ab-f903-4bb6-a4c0-0036208f5ac1.gif)
+
+
