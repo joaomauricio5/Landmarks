@@ -8,48 +8,52 @@
 import SwiftUI
 
 struct LandmarkDetail: View {
+    
+    var landmark: Landmark
+    
     var body: some View {
         
-        VStack {
-            MapView()
+        ScrollView {
+            MapView(coordinate: landmark.locationCoordinate)
                 .frame(height: 300)
                 .ignoresSafeArea(edges: .top)
             
-            CircleImage()
+            CircleImage(image: landmark.image)
                 .padding(.bottom, -130)
                 .offset(y: -130)
             
             VStack(alignment: .leading) {
-                Text("Turtle Rock")
+                Text(landmark.name)
                     .font(.title)
                 
                 HStack {
-                    Text("Joshua Tree National Park")
+                    Text(landmark.park)
                     Spacer()
-                    Text("California")
+                    Text(landmark.state)
                 }
                 .font(.subheadline)
                 .foregroundColor(.secondary)
                 
                 Divider()
                 
-                Text("About Turtle Rock")
+                Text("About \(landmark.name)")
                     .font(.title2)
                     .padding(.vertical)
                 
-                Text("Turtle Rock is a neighborhood in Irvine, California with a population of 25,990. Turtle Rock is in Orange County and is one of the best places to live in California. Living in Turtle Rock offers residents a dense suburban feel and most residents own their homes.")
+                Text(landmark.description)
                 
                 
             }
             .padding()
-            Spacer()
         }
+        .navigationTitle(landmark.name)
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
 
 struct LandmarDetail_Previews: PreviewProvider {
     static var previews: some View {
-        LandmarkDetail()
+        LandmarkDetail(landmark: landmarks[0])
     }
 }
