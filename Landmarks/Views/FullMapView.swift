@@ -18,19 +18,19 @@ struct FullMapView: View {
     var landmarks: [Landmark]
     
     var body: some View {
-        
-        Map(coordinateRegion: $defaultRegion, annotationItems: landmarks) { location in
-            MapMarker(coordinate: location.locationCoordinate)
-//            MapAnnotation(coordinate: location.locationCoordinate) {
-//                Circle()
-//                    .stroke(Color.red, lineWidth: 3)
-//                    .frame(width: 44, height: 44)
-//                    .onTapGesture {
-//                        print("BUTTON TEST")
-//                    }
-//            }
+        NavigationView{
+            Map(coordinateRegion: $defaultRegion, annotationItems: landmarks) { location in
+                MapAnnotation(coordinate: location.locationCoordinate) {
+                    NavigationLink(
+                        destination: LandmarkDetail(landmark: location),
+                        label: {
+                            Image(systemName: "mappin.circle.fill")
+                                .foregroundColor(.red)
+                        })
+                }
+            }
+            .ignoresSafeArea()
         }
-        .ignoresSafeArea()
     }
     
     
