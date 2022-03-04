@@ -9,9 +9,23 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        LandmarkList()
+    
+        TabView{
+            LandmarkList()
+                .tabItem {
+                    Image(systemName: "map.fill")
+                    Text("List")
+                }
+            
+            FullMapView(landmarks: landmarks)
+                .tabItem {
+                    Image(systemName: "map.fill")
+                    Text("Map")
+                }
+        }
     }
 }
+    
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
