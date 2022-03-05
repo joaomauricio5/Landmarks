@@ -13,7 +13,7 @@ struct ContentView: View {
         TabView{
             LandmarkList()
                 .tabItem {
-                    Image(systemName: "map.fill")
+                    Image(systemName: "list.triangle")
                     Text("List")
                 }
             
