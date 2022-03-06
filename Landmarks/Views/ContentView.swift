@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @EnvironmentObject var modelData: ModelData
+    
     var body: some View {
     
         TabView{
@@ -17,7 +20,7 @@ struct ContentView: View {
                     Text("List")
                 }
             
-            FullMapView(landmarks: landmarks)
+            FullMapView(landmarks: modelData.landmarks)
                 .tabItem {
                     Image(systemName: "map.fill")
                     Text("Map")
@@ -31,6 +34,7 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             ContentView()
+                .environmentObject(ModelData())
         }
     }
 }

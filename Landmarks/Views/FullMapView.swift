@@ -38,6 +38,6 @@ struct FullMapView: View {
 
 struct FullMapView_Previews: PreviewProvider {
     static var previews: some View {
-        FullMapView(landmarks: landmarks)
+        FullMapView(landmarks: ModelData().landmarks)
     }
 }
