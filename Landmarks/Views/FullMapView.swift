@@ -15,11 +15,12 @@ struct FullMapView: View {
         span: MKCoordinateSpan(latitudeDelta: 100.0, longitudeDelta: 100.0)
     )
     
-    var landmarks: [Landmark]
+    //var landmarks: [Landmark]
+    @EnvironmentObject var modelData: ModelData
     
     var body: some View {
         NavigationView{
-            Map(coordinateRegion: $defaultRegion, annotationItems: landmarks) { location in
+            Map(coordinateRegion: $defaultRegion, annotationItems: modelData.landmarks) { location in
                 MapAnnotation(coordinate: location.locationCoordinate) {
                     NavigationLink(
                         destination: LandmarkDetail(landmark: location),
@@ -38,6 +39,8 @@ struct FullMapView: View {
 
 struct FullMapView_Previews: PreviewProvider {
     static var previews: some View {
-        FullMapView(landmarks: ModelData().landmarks)
+        //FullMapView(landmarks: ModelData().landmarks)
+        FullMapView()
+            .environmentObject(ModelData())
     }
 }

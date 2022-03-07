@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @EnvironmentObject var modelData: ModelData
+   // @EnvironmentObject var modelData: ModelData
     
     var body: some View {
     
@@ -20,7 +20,7 @@ struct ContentView: View {
                     Text("List")
                 }
             
-            FullMapView(landmarks: modelData.landmarks)
+            FullMapView(/*landmarks: modelData.landmarks*/)
                 .tabItem {
                     Image(systemName: "map.fill")
                     Text("Map")
