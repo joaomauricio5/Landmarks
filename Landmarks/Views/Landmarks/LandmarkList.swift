@@ -21,7 +21,6 @@ struct LandmarkList: View {
         
         NavigationView{
             List {
-                
                 Toggle(isOn: $showFavoritesOnly, label: {
                     Text("Show Favorites Only")
                 })
