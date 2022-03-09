@@ -2,6 +2,6 @@
 
 ### Work in progress
 
-![Git of Landmarks demo](https://user-images.githubusercontent.com/90060036/156419068-8d2ea6ab-f903-4bb6-a4c0-0036208f5ac1.gif)
+https://user-images.githubusercontent.com/90060036/157509569-acc3e051-855a-4788-8c1b-bd7e34f6acd1.mp4
 
 
