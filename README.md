@@ -4,7 +4,7 @@
 
 This application is built around Apple's [SwiftUI Tutorials](https://developer.apple.com/tutorials/swiftui), which then has additional features added independently by me, such as the fullscreen map view with clickable pins.  
   
-The first screen consists of a list of US landmarks. From there, the user can select a specific landmark in order to get more information about it, such as description, location, state, etc. Additionally, from the bottom navigation bar, the user can open a Map which has all of the locations marked with pins. Each pin is clickable and takes the user to the information screen of the clicked landmark. The user is then able to select different landmarks as favorites and, from the home page, hide all of the non-favorite landmarks from the list with a switch. All of the landmarks information is loaded from a JSON file.   
+The first screen consists of a list of US landmarks. From there, the user can select a specific landmark in order to get more information about it, such as description, location, state, etc. Additionally, from the bottom navigation bar, the user can open a Map which has all of the locations marked with pins. Each pin is clickable and takes the user to the information screen of the clicked landmark. The user is then able to select different landmarks as favorites and, from the home page, hide all of the non-favorite landmarks from the list with a switch. All of the information for each landmark is loaded from a JSON file.  
 
 As this is still an ongoing project, I'm also planning on implementing future features:
 - Saving the user's selection of favorite landmarks back to the JSON file;
