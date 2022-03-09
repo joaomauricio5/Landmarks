@@ -8,6 +8,7 @@
 import SwiftUI
 import MapKit
 
+// Testing Git - delete this comment afterwards
 struct FullMapView: View {
     
     @State private var defaultRegion = MKCoordinateRegion(
