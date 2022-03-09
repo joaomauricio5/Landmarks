@@ -10,6 +10,7 @@ As this is still an ongoing project, I'm also planning on implementing future fe
 - Saving the user's selection of favorite landmarks back to the JSON file;
 - Implementing watchOS and macOS versions of the app;
 - Finishing Apple's SwiftUI tutorials and implementing new features from there.
+- Making sure the app is accessible, testing  and debugging it through VoiceOver.
 
 https://user-images.githubusercontent.com/90060036/157509569-acc3e051-855a-4788-8c1b-bd7e34f6acd1.mp4
 
