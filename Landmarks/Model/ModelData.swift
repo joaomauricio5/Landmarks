@@ -9,7 +9,33 @@ import Foundation
 import Combine
 
 final class ModelData: ObservableObject {
-    @Published var landmarks : [Landmark] = load("landmarkData.json")
+    @Published var landmarks : [Landmark] = loadJSON()//load("landmarkData.json")
+    
+    func save() throws {
+        let localDocumentsURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+        let localJsonURL = localDocumentsURL.appendingPathComponent("landmarkData").appendingPathExtension(for: .json)
+        
+        let data = try! JSONEncoder().encode(landmarks)
+        try! data.write(to: localJsonURL, options: .atomic)
+    }
+}
+
+func loadJSON() -> [Landmark] {
+    let localDocumentsURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+    let localJsonURL = localDocumentsURL.appendingPathComponent("landmarkData").appendingPathExtension(for: .json)
+    
+    if FileManager.default.isReadableFile(atPath: localJsonURL.path) { // if app already has a local JSON file (app has been opened before)
+        
+        let jsonData = try! Data(contentsOf: localJsonURL)
+        let decodedData = try! JSONDecoder().decode([Landmark].self, from: jsonData)
+        return decodedData
+        
+    } else { // else if app is opening for the first time and we only have the json file in the Bundle's resources
+        
+        let bundleURL = Bundle.main.url(forResource: "landmarkData.json", withExtension: nil)!
+        try! FileManager.default.copyItem(at: bundleURL, to: localJsonURL) // copy JSON file from Bundle to a new local JSON file
+        return load("landmarkData.json")
+    }
 }
 
 

@@ -20,12 +20,13 @@ struct ContentView: View {
                     Text("List")
                 }
             
-            FullMapView(/*landmarks: modelData.landmarks*/)
+            FullMapView()
                 .tabItem {
                     Image(systemName: "map.fill")
                     Text("Map")
                 }
-        }.environmentObject(modelData)
+        }
+        .environmentObject(modelData)
     }
 }
     

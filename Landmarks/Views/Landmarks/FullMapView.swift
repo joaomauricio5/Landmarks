@@ -15,7 +15,6 @@ struct FullMapView: View {
         span: MKCoordinateSpan(latitudeDelta: 100.0, longitudeDelta: 100.0)
     )
     
-    //var landmarks: [Landmark]
     @EnvironmentObject var modelData: ModelData
     
     var body: some View {
@@ -39,7 +38,6 @@ struct FullMapView: View {
 
 struct FullMapView_Previews: PreviewProvider {
     static var previews: some View {
-        //FullMapView(landmarks: ModelData().landmarks)
         FullMapView()
             .environmentObject(ModelData())
     }
