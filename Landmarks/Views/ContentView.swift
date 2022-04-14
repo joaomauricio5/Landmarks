@@ -9,8 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     
-   // @EnvironmentObject var modelData: ModelData
-    
+    @StateObject private var modelData = ModelData()
+
     var body: some View {
     
         TabView{
@@ -25,7 +25,7 @@ struct ContentView: View {
                     Image(systemName: "map.fill")
                     Text("Map")
                 }
-        }
+        }.environmentObject(modelData)
     }
 }
     
