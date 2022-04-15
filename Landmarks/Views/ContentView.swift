@@ -14,6 +14,11 @@ struct ContentView: View {
     var body: some View {
     
         TabView{
+            CategoriesHome()
+                .tabItem{
+                    Image(systemName: "star")
+                    Text("Featured")
+                }
             LandmarkList()
                 .tabItem {
                     Image(systemName: "list.triangle")

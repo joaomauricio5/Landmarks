@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 final class ModelData: ObservableObject {
-    @Published var landmarks : [Landmark] = loadJSON()//load("landmarkData.json")
+    @Published var landmarks : [Landmark] = loadJSON()
     
     func save() throws {
         let localDocumentsURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
@@ -17,6 +17,14 @@ final class ModelData: ObservableObject {
         
         let data = try! JSONEncoder().encode(landmarks)
         try! data.write(to: localJsonURL, options: .atomic)
+    }
+    
+    var categories: [String : [Landmark]] {
+        Dictionary(grouping: landmarks) {$0.category}
+    }
+    
+    var featuredLandmarks: [Landmark] {
+        landmarks.filter{$0.isFeatured}
     }
 }
 
