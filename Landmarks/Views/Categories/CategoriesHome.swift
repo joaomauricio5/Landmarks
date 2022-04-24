@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CategoriesHome: View {
     
-    //@EnvironmentObject var modelData: ModelData
+    @EnvironmentObject var modelData: ModelData
     
     var body: some View {
         
